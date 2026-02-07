@@ -3,9 +3,9 @@
 Este proyecto implementa una simulación sencilla de un portafolio de
 inversiones con acciones, permitiendo:
 
--   Comprar y vender acciones\
--   Calcular el valor total del portafolio\
--   Definir una asignación objetivo (target allocation)\
+-   Comprar y vender acciones
+-   Calcular el valor total del portafolio
+-   Definir una asignación objetivo (target allocation)
 -   Rebalancear automáticamente el portafolio según porcentajes deseados
 
 El objetivo principal es demostrar cómo un portafolio puede ajustarse
@@ -19,12 +19,12 @@ dinámicamente para mantener una distribución específica de activos.
 
 Representa una acción individual con:
 
--   Nombre (ticker)\
+-   Nombre (ticker)
 -   Precio actual
 
 #### Métodos principales:
 
--   `update_price(new_price)`: actualiza el precio\
+-   `update_price(new_price)`: actualiza el precio
 -   `__str__()`: imprime información legible de la acción
 
 Ejemplo:
@@ -39,8 +39,8 @@ stock_a = Stock("AAPL", 150.00)
 
 Representa un portafolio con:
 
--   Caja disponible (`cash`)\
--   Acciones mantenidas (`stocks`)\
+-   Caja disponible (`cash`)
+-   Acciones mantenidas (`stocks`)
 -   Asignación objetivo (`allocation`)
 
 ------------------------------------------------------------------------
@@ -90,8 +90,8 @@ portfolio.rebalance()
 
 Este proceso realiza:
 
-1.  Cálculo de diferencias entre el valor actual y el valor objetivo\
-2.  Generación de órdenes de compra y venta necesarias\
+1.  Cálculo de diferencias entre el valor actual y el valor objetivo
+2.  Generación de órdenes de compra y venta necesarias
 3.  Ejecución ordenada de trades
 
 ------------------------------------------------------------------------
@@ -100,7 +100,7 @@ Este proceso realiza:
 
 El rebalanceo se ejecuta en dos pasos:
 
-1.  **Primero se venden acciones que están sobre-ponderadas**\
+1.  **Primero se venden acciones que están sobre-ponderadas**
 2.  **Luego se compran acciones sub-ponderadas**
 
 Esto se hizo intencionalmente para asegurar que el portafolio tenga
@@ -124,14 +124,14 @@ completamente invertido.
 
 El bloque principal crea 3 acciones:
 
--   AAPL\
--   GOOGL\
+-   AAPL
+-   GOOGL
 -   AMZN
 
 Luego:
 
--   Se crea un portafolio con \$10,000\
--   Se define una asignación objetivo\
+-   Se crea un portafolio con $10,000
+-   Se define una asignación objetivo
 -   Se rebalancea automáticamente
 
 ``` python
@@ -161,10 +161,10 @@ Y luego el estado final del portafolio.
 
 ## 🔧 Posibles mejoras futuras
 
--   Validar que no se vendan más acciones de las que se poseen\
--   Permitir rebalanceo parcial si no hay suficiente caja\
--   Agregar comisiones de trading\
--   Manejar precios dinámicos en el tiempo\
+-   Validar que no se vendan más acciones de las que se poseen
+-   Permitir rebalanceo parcial si no hay suficiente caja
+-   Agregar comisiones de trading
+-   Manejar precios dinámicos en el tiempo
 -   Mejorar el `__str__` del portafolio (actualmente imprime mal los
     stocks)
 
